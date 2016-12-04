@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Personal GoLang History</title>
+		<style>
+			body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1, h2, h3 {
+	font-weight: 400;
+	margin-bottom: 0;
+}
+.remark-slide-content h1 { font-size: 3em; }
+.remark-slide-content h2 { font-size: 2em; }
+.remark-slide-content h3 { font-size: 1.6em; }
+.footnote {
+	position: absolute;
+	bottom: 3em;
+}
+li p { line-height: 1.25em; }
+.red { color: #fa0000; }
+.large { font-size: 2em; }
+a, a > code {
+	color: rgb(249, 38, 114);
+	text-decoration: none;
+}
+code {
+	background: none repeat scroll 0 0 #F8F8FF;
+  border: 1px solid #DEDEDE;
+  border-radius: 3px 	;
+  padding: 0 0.2em;
+}
+.remark-code, .remark-inline-code { font-family: "Bitstream Vera Sans Mono", "Courier", monospace; }
+.remark-code-line-highlighted     { background-color: #373832; }
+.pull-left {
+	float: left;
+	width: 47%;
+}
+.pull-right {
+	float: right;
+	width: 47%;
+}
+.pull-right ~ p {
+	clear: both;
+}
+#slideshow .slide .content code {
+	font-size: 0.8em;
+}
+#slideshow .slide .content pre code {
+	font-size: 0.9em;
+	padding: 15px;
+}
+.main-title, .title {
+	background: #272822;
+	color: #777872;
+	text-shadow: 0 0 20px #333;
+}
+.title h1, .title h2, .main-title h1, .main-title h2 {
+	color: #f3f3f3;
+	line-height: 0.8em;
+}
+/* Custom */
+.remark-code {
+	display: block;
+	padding: 0.5em;
+}
+
+		</style>
+	</head>
+	<body>
+		<textarea id="source">
+class: middle, center
+#GoLang BrownBag
+
+By Alan Gawthorpe
+
+---
+class: middle, center
+# Personal GoLang History
+---
+## CSharpe
+
+```cs
+public void DoFizzBuzz()
+{
+    for (int i = 1; i <= 100; i++)
+    {
+        bool fizz = i % 3 == 0;
+        bool buzz = i % 5 == 0;
+        if (fizz && buzz)
+            Console.WriteLine ("FizzBuzz");
+        else if (fizz)
+            Console.WriteLine ("Fizz");
+        else if (buzz)
+            Console.WriteLine ("Buzz");
+        else
+            Console.WriteLine (i);
+    }
+}
+```
+
+---
+## Python 
+
+```python
+def fizzbuzz(n):
+
+    if n % 3 == 0 and n % 5 == 0:
+        return 'FizzBuzz'
+    elif n % 3 == 0:
+        return 'Fizz'
+    elif n % 5 == 0:
+        return 'Buzz'
+    else:
+        return str(n)
+
+print "\n".join(fizzbuzz(n) for n in xrange(1, 21))
+```
+---
+## Javascript
+```js
+function fizzbuzz(i) {
+  if (i % 5 === 0 && i % 3 === 0) {
+    return 'FizzBuzz';
+  } else if (i % 3 === 0) {
+    return 'Fizz';
+  } else if (i % 5 === 0) {
+    return 'Buzz';
+  } else {
+    return i
+  }
+};
+for (var i = 1; i <= 20; i++) {
+  console.log(fizzbuzz(i) + '\n')
+}
+```
+
+---
+## GoLang
+
+```go
+package main
+import (
+    "fmt"
+    "strconv"
+)
+
+func fizzbuzz(num int) string {
+    if num%15 == 0 {
+        return("FizzBuzz")
+    } else if num%3 == 0 {
+        return("Fizz")
+    } else if num%5 == 0 {
+        return("Buzz")
+    } 
+    return(strconv.Itoa(num))
+}
+
+func main() {  
+    for i := 1; i <= 100; i++ {
+        fmt.Println(fizzbuzz(i))
+    }
+}
+```
+
+---
+# So What
+
+---
+# Google Background
+
+![](Rob-pike-oscon.jpg) Rob Pike - Worked at Bell labs.  Co-creator of UTF-8?! 
+
+![](robert.jpg) Robert Griesemer - some Java stuff 
+
+![](220px-Ken_n_dennis.jpg) Ken Thompson - designed and implemented Unix and B (predecessor of C) 
+
+![](Plan9bunnysmblack.jpg) ![](Golang_gopher.png) 
+
+---
+# Google Background
+
+![](Rob-pike-oscon.jpg) Rob Pike - Worked at Bell labs.  Co-creator of UTF-8?! 
+
+![](robert.jpg) Robert Griesemer - some Java stuff 
+
+![](220px-Ken_n_dennis.jpg) Ken Thompson - designed and implemented Unix and B (predecessor of C) 
+
+![](Plan9bunnysmblack.jpg) ![](Golang_gopher.png) Renée French
+
+---
+# Context
+
+* C++, Python, Java
+* Single repository
+* Complex build system
+
+
+---
+exclude: true
+# Tool Bloat
+
+![](vs2015-fizzbuzz-solution.png)
+
+---
+#Other Examples
+
+##Erlang
+```erlang
+fizzbuzz() ->
+	F = fun(N) when N rem 15 == 0 -> "FizzBuzz";
+		(N) when N rem 3 == 0  -> "Fizz";
+		(N) when N rem 5 == 0  -> "Buzz";
+		(N) -> integer_to_list(N)
+	end,
+[F(N)++"\n" || N <- lists:seq(1,100)]
+```
+
+##JS - Paul Irish
+```js
+for (var i = 1; i <= 100; i++) {
+  var f = i % 3 == 0, b = i % 5 == 0;
+  console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
+}
+```
+
+---
+### Chapter 1.2
+
+Some content
+
+---
+## And so on...
+		</textarea>
+		<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+		<script>
+			var slideshow = remark.create();
+		</script>
+		<script></script>
+	</body>
+</html>
