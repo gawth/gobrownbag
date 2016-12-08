@@ -21,6 +21,6 @@ func main() {
 		if err != nil {
 			panic(err)
 		}
-		handleConnection(conn)
+		go handleConnection(conn)
 	}
 }
