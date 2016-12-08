@@ -5,7 +5,7 @@ By Alan Gawthorpe
 
 ---
 class: middle, center
-# Personal GoLang History
+# A bit of History
 ---
 ## CSharpe
 
@@ -125,6 +125,8 @@ func main() {
 * Complex build system
 
 
+---
+# Example
 ---
 exclude: true
 # Tool Bloat
