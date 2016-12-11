@@ -124,6 +124,17 @@ func main() {
 * Single repository
 * Complex build system
 
+---
+# Key Features
+Too many to list but here is a few I thought worth mentioning:
+* Structure of working directories, etc
+* Compilation is very picky - imports, documentation, unused variables
+* No inheritence
+* Interface implementation is implicit
+* Go routines and channels
+* Gargage Collection
+* Error handling
+
 
 ---
 exclude: true
