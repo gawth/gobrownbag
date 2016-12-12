@@ -7,7 +7,52 @@ By Alan Gawthorpe
 class: middle, center
 # A bit of History
 ---
-## CSharpe
+## ???
+```ada
+procedure FizzBuzz is
+
+begin
+
+   for i in 1 .. 100 loop
+
+      Integer_Text_IO.Put (i);
+
+      if i rem 15 = 0 then
+         Text_IO.Put (" FizzBuzz");
+      elsif i rem 5 = 0 then
+         Text_IO.Put (" Buzz");
+      elsif i rem 3 = 0 then
+         Text_IO.Put (" Fizz"); 
+      end if;    
+
+      Text_IO.Skip_Line;
+
+   end loop;
+
+end FizzBuzz;
+```
+---
+## ???
+```c
+int main(void)
+{
+    int i;
+    for(i=1; i<=100; ++i)
+    {
+        if (i % 3 == 0)
+            printf("Fizz");
+        if (i % 5 == 0)
+            printf("Buzz");
+        if ((i % 3 != 0) && (i % 5 != 0))
+            printf("number=%d", i);
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+---
+## ???
 
 ```cs
 public void DoFizzBuzz()
@@ -29,7 +74,7 @@ public void DoFizzBuzz()
 ```
 
 ---
-## Python 
+## ??? 
 
 ```python
 def fizzbuzz(n):
@@ -46,7 +91,7 @@ def fizzbuzz(n):
 print "\n".join(fizzbuzz(n) for n in xrange(1, 21))
 ```
 ---
-## Javascript
+## ???
 ```js
 function fizzbuzz(i) {
   if (i % 5 === 0 && i % 3 === 0) {
