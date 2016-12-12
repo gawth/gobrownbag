@@ -124,6 +124,47 @@ func main() {
 * Single repository
 * Complex build system
 
+---
+# Key Features
+Too many to list but here is a few I thought worth mentioning:
+* Structure of working directories, etc
+* Compilation is very picky - imports, documentation, unused variables
+* No inheritence
+* Interface implementation is implicit
+* Gargage Collection
+* Error handling
+* Go routines and channels
+
+---
+# Interfaces
+
+```go
+type geometry interface {
+    area() float64
+    perim() float64
+}
+
+type rect struct {
+    width, height float64
+}
+func (r rect) area() float64 {
+    return r.width * r.height
+}
+func (r rect) perim() float64 {
+    return 2*r.width + 2*r.height
+}
+
+func measure(g geometry) {
+    fmt.Println(g)
+    fmt.Println(g.area())
+    fmt.Println(g.perim())
+}
+func main() {
+    r := rect{width: 3, height: 4}
+    
+    measure(r)
+}
+```
 
 ---
 # Example
