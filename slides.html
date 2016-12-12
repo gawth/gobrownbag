@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Personal GoLang History</title>
+		<title>A bit of History</title>
 		<style>
 			body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -77,9 +77,54 @@ By Alan Gawthorpe
 
 ---
 class: middle, center
-# Personal GoLang History
+# A bit of History
 ---
-## CSharpe
+## ???
+```ada
+procedure FizzBuzz is
+
+begin
+
+   for i in 1 .. 100 loop
+
+      Integer_Text_IO.Put (i);
+
+      if i rem 15 = 0 then
+         Text_IO.Put (" FizzBuzz");
+      elsif i rem 5 = 0 then
+         Text_IO.Put (" Buzz");
+      elsif i rem 3 = 0 then
+         Text_IO.Put (" Fizz"); 
+      end if;    
+
+      Text_IO.Skip_Line;
+
+   end loop;
+
+end FizzBuzz;
+```
+---
+## ???
+```c
+int main(void)
+{
+    int i;
+    for(i=1; i<=100; ++i)
+    {
+        if (i % 3 == 0)
+            printf("Fizz");
+        if (i % 5 == 0)
+            printf("Buzz");
+        if ((i % 3 != 0) && (i % 5 != 0))
+            printf("number=%d", i);
+        printf("\n");
+    }
+
+    return 0;
+}
+```
+---
+## ???
 
 ```cs
 public void DoFizzBuzz()
@@ -101,7 +146,7 @@ public void DoFizzBuzz()
 ```
 
 ---
-## Python 
+## ??? 
 
 ```python
 def fizzbuzz(n):
@@ -118,7 +163,7 @@ def fizzbuzz(n):
 print "\n".join(fizzbuzz(n) for n in xrange(1, 21))
 ```
 ---
-## Javascript
+## ???
 ```js
 function fizzbuzz(i) {
   if (i % 5 === 0 && i % 3 === 0) {
@@ -140,12 +185,6 @@ for (var i = 1; i <= 20; i++) {
 ## GoLang
 
 ```go
-package main
-import (
-    "fmt"
-    "strconv"
-)
-
 func fizzbuzz(num int) string {
     if num%15 == 0 {
         return("FizzBuzz")
@@ -157,16 +196,29 @@ func fizzbuzz(num int) string {
     return(strconv.Itoa(num))
 }
 
-func main() {  
-    for i := 1; i <= 100; i++ {
-        fmt.Println(fizzbuzz(i))
-    }
-}
 ```
 
 ---
 # So What
 
+Syntactically they're all pretty much the same...
+
+---
+# Well...
+
+Ada - statically typed, verbose, mission critical stuff, pretty dull.
+
+C - static...with loop holes.  Low level, manage you own memory, etc.
+
+C# - static with garbage collection. C# vs Java.
+
+Python - dynamic types.  Flexible, no less brackets! Bit slow.
+
+Javascript - dynamic.  Callbacks...
+
+Go - static...but it can feel pretty dynamic.  Fast, even with GC.
+
+C++ - really complicated language, bugger to build...
 ---
 # Google Background
 
@@ -177,24 +229,17 @@ func main() {
 ![](220px-Ken_n_dennis.jpg) Ken Thompson - designed and implemented Unix and B (predecessor of C) 
 
 ![](Plan9bunnysmblack.jpg) ![](Golang_gopher.png) 
-
----
-# Google Background
-
-![](Rob-pike-oscon.jpg) Rob Pike - Worked at Bell labs.  Co-creator of UTF-8?! 
-
-![](robert.jpg) Robert Griesemer - some Java stuff 
-
-![](220px-Ken_n_dennis.jpg) Ken Thompson - designed and implemented Unix and B (predecessor of C) 
-
-![](Plan9bunnysmblack.jpg) ![](Golang_gopher.png) Renée French
+--
+Renée French
 
 ---
 # Context
+## 2007
 
 * C++, Python, Java
 * Single repository
 * Complex build system
+
 
 ---
 # Key Features
@@ -203,9 +248,9 @@ Too many to list but here is a few I thought worth mentioning:
 * Compilation is very picky - imports, documentation, unused variables
 * No inheritence
 * Interface implementation is implicit
-* Go routines and channels
 * Gargage Collection
 * Error handling
+* Go routines and channels
 
 ---
 # Interfaces
@@ -238,6 +283,8 @@ func main() {
 }
 ```
 
+---
+# Example
 ---
 exclude: true
 # Tool Bloat

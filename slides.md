@@ -113,12 +113,6 @@ for (var i = 1; i <= 20; i++) {
 ## GoLang
 
 ```go
-package main
-import (
-    "fmt"
-    "strconv"
-)
-
 func fizzbuzz(num int) string {
     if num%15 == 0 {
         return("FizzBuzz")
@@ -130,16 +124,29 @@ func fizzbuzz(num int) string {
     return(strconv.Itoa(num))
 }
 
-func main() {  
-    for i := 1; i <= 100; i++ {
-        fmt.Println(fizzbuzz(i))
-    }
-}
 ```
 
 ---
 # So What
 
+Syntactically they're all pretty much the same...
+
+---
+# Well...
+
+Ada - statically typed, verbose, mission critical stuff, pretty dull.
+
+C - static...with loop holes.  Low level, manage you own memory, etc.
+
+C# - static with garbage collection. C# vs Java.
+
+Python - dynamic types.  Flexible, no less brackets! Bit slow.
+
+Javascript - dynamic.  Callbacks...
+
+Go - static...but it can feel pretty dynamic.  Fast, even with GC.
+
+C++ - really complicated language, bugger to build...
 ---
 # Google Background
 
@@ -150,24 +157,17 @@ func main() {
 ![](220px-Ken_n_dennis.jpg) Ken Thompson - designed and implemented Unix and B (predecessor of C) 
 
 ![](Plan9bunnysmblack.jpg) ![](Golang_gopher.png) 
-
----
-# Google Background
-
-![](Rob-pike-oscon.jpg) Rob Pike - Worked at Bell labs.  Co-creator of UTF-8?! 
-
-![](robert.jpg) Robert Griesemer - some Java stuff 
-
-![](220px-Ken_n_dennis.jpg) Ken Thompson - designed and implemented Unix and B (predecessor of C) 
-
-![](Plan9bunnysmblack.jpg) ![](Golang_gopher.png) Renée French
+--
+Renée French
 
 ---
 # Context
+## 2007
 
 * C++, Python, Java
 * Single repository
 * Complex build system
+
 
 ---
 # Key Features
