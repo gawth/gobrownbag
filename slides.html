@@ -240,6 +240,7 @@ Renée French
 * Single repository
 * Complex build system
 
+Make changes -> compile and test locally -> check in -> pending -> run tests -> code review -> pass -> trunk
 
 ---
 # Key Features
@@ -252,6 +253,16 @@ Too many to list but here is a few I thought worth mentioning:
 * Error handling
 * Go routines and channels
 
+---
+# Error Handling 
+
+```go
+f, err := os.Open("filename.ext")
+if err != nil {
+    log.Fatal(err)
+}
+// do something with the open *File f
+```
 ---
 # Interfaces
 
@@ -284,15 +295,28 @@ func main() {
 ```
 
 ---
-# Example
----
-exclude: true
-# Tool Bloat
+# Go Routines and channels
 
-![](vs2015-fizzbuzz-solution.png)
+```go
+package main
+import "fmt"
+
+func main() {
+    messages := make(chan string)
+    
+    go func() { messages <- "ping" }()
+
+    msg := <-messages
+    fmt.Println(msg)
+}
+```
+---
+
+# More Code
+
+If we have more time I'll look at some more code...
 
 ---
-#Other Examples
 
 ##Erlang
 ```erlang
@@ -312,14 +336,6 @@ for (var i = 1; i <= 100; i++) {
   console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
 }
 ```
-
----
-### Chapter 1.2
-
-Some content
-
----
-## And so on...
 		</textarea>
 		<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
 		<script>

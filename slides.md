@@ -240,15 +240,11 @@ func main() {
 ```
 ---
 
-# Example
----
-exclude: true
-# Tool Bloat
+# More Code
 
-![](vs2015-fizzbuzz-solution.png)
+If we have more time I'll look at some more code...
 
 ---
-#Other Examples
 
 ##Erlang
 ```erlang
@@ -268,11 +264,3 @@ for (var i = 1; i <= 100; i++) {
   console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
 }
 ```
-
----
-### Chapter 1.2
-
-Some content
-
----
-## And so on...
