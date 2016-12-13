@@ -168,6 +168,7 @@ Renée French
 * Single repository
 * Complex build system
 
+Make changes -> compile and test locally -> check in -> pending -> run tests -> code review -> pass -> trunk
 
 ---
 # Key Features

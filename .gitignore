@@ -1,3 +1,4 @@
 *.exe
 web/web
 chat/chat
+*.log
