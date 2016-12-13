@@ -182,6 +182,16 @@ Too many to list but here is a few I thought worth mentioning:
 * Go routines and channels
 
 ---
+# Error Handling 
+
+```go
+f, err := os.Open("filename.ext")
+if err != nil {
+    log.Fatal(err)
+}
+// do something with the open *File f
+```
+---
 # Interfaces
 
 ```go
@@ -213,6 +223,23 @@ func main() {
 ```
 
 ---
+# Go Routines and channels
+
+```go
+package main
+import "fmt"
+
+func main() {
+    messages := make(chan string)
+    
+    go func() { messages <- "ping" }()
+
+    msg := <-messages
+    fmt.Println(msg)
+}
+```
+---
+
 # Example
 ---
 exclude: true
