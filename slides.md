@@ -245,6 +245,9 @@ func main() {
 If we have more time I'll look at some more code...
 
 ---
+# Summary
+
+---
 
 ##Erlang
 ```erlang
