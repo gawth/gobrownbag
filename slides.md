@@ -182,14 +182,29 @@ Too many to list but here is a few I thought worth mentioning:
 * Go routines and channels
 
 ---
-# Error Handling 
+# Struct - i.e. Classes
 
 ```go
-f, err := os.Open("filename.ext")
-if err != nil {
-    log.Fatal(err)
+
+type rect struct {
+    width, height float64
 }
-// do something with the open *File f
+func (r rect) area() float64 {
+    return r.width * r.height
+}
+func (r rect) perim() float64 {
+    return 2*r.width + 2*r.height
+}
+
+func measure(r rect) {
+    fmt.Println(r.perim())
+    fmt.Println(r)
+}
+func main() {
+    r := rect{width: 3, height: 4}
+    
+    measure(r)
+}
 ```
 ---
 # Interfaces
@@ -222,6 +237,16 @@ func main() {
 }
 ```
 
+---
+# Error Handling 
+
+```go
+f, err := os.Open("filename.ext")
+if err != nil {
+    log.Fatal(err)
+}
+// do something with the open *File f
+```
 ---
 # Go Routines and channels
 
