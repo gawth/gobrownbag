@@ -251,14 +251,20 @@ If we have more time I'll look at some more code...
 
 ##Erlang
 ```erlang
-fizzbuzz() ->
-	F = fun(N) when N rem 15 == 0 -> "FizzBuzz";
-		(N) when N rem 3 == 0  -> "Fizz";
-		(N) when N rem 5 == 0  -> "Buzz";
-		(N) -> integer_to_list(N)
-	end,
-[F(N)++"\n" || N <- lists:seq(1,100)]
+run() -> run(1).
+
+run(N) -> lists:foreach(fun(S) -> io:format("~s~n", [S]) end, run(N, [])).
+
+run(N, Res) when N > 100 -> Res;
+run(N, Res) when (N rem 3 =:= 0) and (N rem 5 =:= 0) -> run(N + 1, Res ++ ["FizzBuzz"]);
+run(N, Res) when N rem 3 =:= 0 -> run(N + 1, Res ++ ["Fizz"]);
+run(N, Res) when N rem 5 =:= 0 -> run(N + 1, Res ++ ["Buzz"]);
+run(N, Res) -> run(N + 1, Res ++ [integer_to_list(N)]).
+
+fizz_test() -> [1, 2, "Fizz"] = run(3, []).
+
 ```
+https://github.com/aeden/fizzbuzz-erlang/blob/master/explained.md
 
 ##JS - Paul Irish
 ```js
