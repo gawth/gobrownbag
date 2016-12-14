@@ -271,6 +271,23 @@ If we have more time I'll look at some more code...
 
 ---
 # Summary
+* Fast
+* Familiar
+* Consistent
+* Simple
+* Multi-platform
+* Good standard library support for web, Json, XML, SQL, etc 
+* No GUI yet 
+* No match for Erlang in *distributed* systems
+
+https://golang.org/
+https://golang.org/doc/
+https://tour.golang.org/
+https://golang.org/doc/effective_go.html
+https://golang.org/pkg/
+https://go.googlesource.com/go
+https://gobyexample.com/
+
 
 ---
 
