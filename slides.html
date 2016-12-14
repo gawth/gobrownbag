@@ -254,14 +254,29 @@ Too many to list but here is a few I thought worth mentioning:
 * Go routines and channels
 
 ---
-# Error Handling 
+# Struct - i.e. Classes
 
 ```go
-f, err := os.Open("filename.ext")
-if err != nil {
-    log.Fatal(err)
+
+type rect struct {
+    width, height float64
 }
-// do something with the open *File f
+func (r rect) area() float64 {
+    return r.width * r.height
+}
+func (r rect) perim() float64 {
+    return 2*r.width + 2*r.height
+}
+
+func measure(r rect) {
+    fmt.Println(r.perim())
+    fmt.Println(r)
+}
+func main() {
+    r := rect{width: 3, height: 4}
+    
+    measure(r)
+}
 ```
 ---
 # Interfaces
@@ -295,6 +310,16 @@ func main() {
 ```
 
 ---
+# Error Handling 
+
+```go
+f, err := os.Open("filename.ext")
+if err != nil {
+    log.Fatal(err)
+}
+// do something with the open *File f
+```
+---
 # Go Routines and channels
 
 ```go
@@ -318,19 +343,42 @@ If we have more time I'll look at some more code...
 
 ---
 # Summary
+* Fast
+* Familiar
+* Consistent
+* Simple
+* Multi-platform
+* Good standard library support for web, Json, XML, SQL, etc 
+* No GUI yet 
+* No match for Erlang in *distributed* systems
+
+https://golang.org/  
+https://golang.org/doc/   
+https://tour.golang.org/   
+https://golang.org/doc/effective_go.html   
+https://golang.org/pkg/   
+https://go.googlesource.com/go   
+https://gobyexample.com/   
+
 
 ---
 
 ##Erlang
 ```erlang
-fizzbuzz() ->
-	F = fun(N) when N rem 15 == 0 -> "FizzBuzz";
-		(N) when N rem 3 == 0  -> "Fizz";
-		(N) when N rem 5 == 0  -> "Buzz";
-		(N) -> integer_to_list(N)
-	end,
-[F(N)++"\n" || N <- lists:seq(1,100)]
+run() -> run(1).
+
+run(N) -> lists:foreach(fun(S) -> io:format("~s~n", [S]) end, run(N, [])).
+
+run(N, Res) when N > 100 -> Res;
+run(N, Res) when (N rem 3 =:= 0) and (N rem 5 =:= 0) -> run(N + 1, Res ++ ["FizzBuzz"]);
+run(N, Res) when N rem 3 =:= 0 -> run(N + 1, Res ++ ["Fizz"]);
+run(N, Res) when N rem 5 =:= 0 -> run(N + 1, Res ++ ["Buzz"]);
+run(N, Res) -> run(N + 1, Res ++ [integer_to_list(N)]).
+
+fizz_test() -> [1, 2, "Fizz"] = run(3, []).
+
 ```
+https://github.com/aeden/fizzbuzz-erlang/blob/master/explained.md
 
 ##JS - Paul Irish
 ```js
@@ -339,6 +387,7 @@ for (var i = 1; i <= 100; i++) {
   console.log(f ? b ? "FizzBuzz" : "Fizz" : b ? "Buzz" : i);
 }
 ```
+
 		</textarea>
 		<script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
 		<script>
